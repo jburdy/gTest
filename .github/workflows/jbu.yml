@@ -1,6 +1,6 @@
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+on: [push, workflow_dispatch]
 jobs:
   Explore-GitHub-Actions:
     runs-on: windows-latest
@@ -14,6 +14,13 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+          echo ${{ github.workspace }}
           pwd
           cat README.md
+          azcopy -v
+          pwsh -v
+          git -v
+          python --version
+          pip --version
+          MSBuild.exe --version
       - run: echo "🍏 This job's status is ${{ job.status }}."
