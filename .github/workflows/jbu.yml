@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push, workflow_dispatch]
 jobs:
   Explore-GitHub-Actions:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 event_name[${{ github.event_name }}] - os[${{ runner.os }}] - ref[${{ github.ref }}] 🐧"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
@@ -18,10 +18,7 @@ jobs:
           echo ${{ github.workspace }}
           pwd
           cat README.md
-          azcopy -v
-          pwsh -v
           git -v
           python --version
           pip --version
-          MSBuild.exe --version
       - run: echo "🍏 This job's status is ${{ job.status }}."
